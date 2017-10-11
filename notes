@@ -7,3 +7,4 @@ SELECT last_name,salary,COMMISSION_PCT FROM HR.EMPLOYEES
 WHERE COMMISSION_PCT IS NOT NULL
 ORDER BY SALARY DESC, COMMISSION_PCT DESC;
 ------------------------------------------------------
+SELECT first_name FROM table WHERE SUBSTR(last_name, 2, 1) = 'o'
