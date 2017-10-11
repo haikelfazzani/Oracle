@@ -11,3 +11,5 @@ ORDER BY SALARY DESC, COMMISSION_PCT DESC;
 SELECT first_name FROM table WHERE SUBSTR(last_name, 2, 1) = 'o'
 select * from emp where ename ename like'___A%'
 -------------------------------------------------------------------------------------------------
+SELECT MIN(Price) AS SmallestPrice
+FROM Products;
