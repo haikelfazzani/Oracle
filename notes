@@ -1,0 +1,3 @@
+SELECT last_name,hire_date FROM HR.EMPLOYEES 
+WHERE EXTRACT(YEAR FROM TO_DATE(hire_date, 'DD-MON-RR')) = 2002; 
+
