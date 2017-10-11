@@ -1,3 +1,9 @@
+**-- EXTRACT YEAR FROM DATE COLUMN --**
 SELECT last_name,hire_date FROM HR.EMPLOYEES 
 WHERE EXTRACT(YEAR FROM TO_DATE(hire_date, 'DD-MON-RR')) = 2002; 
-
+----------------------------------------------------------------------
+**-- ORDER BY 2 COLUMS --**
+SELECT last_name,salary,COMMISSION_PCT FROM HR.EMPLOYEES
+WHERE COMMISSION_PCT IS NOT NULL
+ORDER BY SALARY DESC, COMMISSION_PCT DESC;
+------------------------------------------------------
