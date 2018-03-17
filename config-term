@@ -1,0 +1,19 @@
+set wrap off; 
+set linesize 3000;
+define dir=E:\VsCode\SQL;
+set autocommit on;
+--------------------------------
+DESC table_name;
+--------------------------------
+@&dir/test.sql; 
+--------------------------------
+define dir=E:\VsCode\SQL;
+set autocommit on;
+set linesize 32000;
+
+column email format a10;
+column first_name format a10;
+column last_name format a10;
+column phone_number format a20;
+
+clear screen
