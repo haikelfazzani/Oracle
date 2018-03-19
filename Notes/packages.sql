@@ -1,6 +1,5 @@
 -- Package Specification
-CREATE or REPLACE PACKAGE pkg1
-    IS | AS
+CREATE or REPLACE PACKAGE pkg1 IS | AS
     PROCEDURE pro1
         (no in number, name out varchar2);
     FUNCTION fun1
@@ -10,16 +9,13 @@ CREATE or REPLACE PACKAGE pkg1
 /
 
 -- Package Body
-CREATE or REPLACE PACKAGE BODY pkg1
-IS
-    PROCEDURE pro1(no in number,info our varchar2)
-        IS
+CREATE or REPLACE PACKAGE BODY pkg1 IS
+    PROCEDURE pro1(no in number,info our varchar2) IS
         BEGIN
             SELECT * INTO temp FROM emp1 WHERE eno = no;
         END;
     
-    FUNCTION fun1(no in number) return varchar2
-        IS
+    FUNCTION fun1(no in number) return varchar2 IS
         name varchar2(20);
         BEGIN
             SELECT ename INTO name FROM emp1 WHERE eno = no;
