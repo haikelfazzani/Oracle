@@ -3,15 +3,37 @@ SET SERVEROUTPUT ON
 
 
 -- Exercice 1 :
-SELECT * FROM EMPLOYEES;
-SELECT * FROM JOB_HISTORY;
-SELECT  LAST_NAME , HIRE_DATE FROM EMPLOYEES GROUP BY LAST_NAME , HIRE_DATE;
-SELECT * FROM JOBS;
-select e1.last_name "Employee",
-               e2.last_name "Reports To"
-          from employees e1 left outer join employees e2
-            on e1.manager_id = e2.employee_id
-         order by e1.employee_id;
+SET SERVEROUTPUT ON
+            
+CREATE OR REPLACE PROCEDURE manager_of_emp(emp_id EMPLOYEES.EMPLOYEE_ID%TYPE) IS
+    nom EMPLOYEES.FIRST_NAME%TYPE; 
+    prenom EMPLOYEES.LAST_NAME%TYPE; 
+    
+    nom_mang EMPLOYEES.FIRST_NAME%TYPE; 
+    pren_manag EMPLOYEES.LAST_NAME%TYPE; 
+BEGIN
+    SELECT e1.FIRST_NAME ,e1.last_name , e2.first_name , e2.last_name 
+    INTO nom , prenom , nom_mang , pren_manag
+    FROM employees e1 left outer join employees e2
+    ON e1.manager_id = e2.EMPLOYEE_ID
+    WHERE e1.EMPLOYEE_ID = emp_id
+    ORDER BY e1.EMPLOYEE_ID;
+    
+    IF nom_mang IS NULL OR pren_manag IS NULL THEN
+        DBMS_OUTPUT.PUT_LINE(' --> Ce employee n a pas un manager');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE(
+            'Nom employee : ' || nom || chr(10) || 
+            'Prenom employee : ' || prenom || chr(10) || 
+            'Nom Manager : ' || nom_mang || chr(10) || 
+            'Prenom Manager : ' || pren_manag || chr(10) 
+        );
+    END IF;
+END;
+/
+
+EXECUTE manager_of_emp(107);
+EXECUTE manager_of_emp(100);
     
     
 -- Exercice 2 :
@@ -96,4 +118,3 @@ END;
 /
 
 EXECUTE my_insert('Ouvrier3' ,'Programmer' ,40000,2000);
-
