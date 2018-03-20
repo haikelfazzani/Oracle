@@ -1,10 +1,11 @@
 -- Delete a column
-ALTER TABLE table_name
-  DROP COLUMN column_name;
+ALTER TABLE table_name  DROP COLUMN column_name;
 
 -- Add a simple column 
-ALTER TABLE table_name
-  ADD column_name column-definition;
+ALTER TABLE table_name  ADD column_name column-definition;
+
+-- Rename column
+ALTER TABLE table_name RENAME COLUMN old_name TO new_name;
 
 
 -- Add a multiple column
