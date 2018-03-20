@@ -1,4 +1,3 @@
-```sql
 -- Td 3 : Haikel Fazzani
 SET SERVEROUTPUT ON
 
@@ -109,5 +108,3 @@ BEGIN
     END LOOP;
 END;
 /
-
-```
