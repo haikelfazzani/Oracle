@@ -164,7 +164,7 @@ SELECT * FROM CLIENT;
 DECLARE
     NB_CLIENT NUMBER;
 BEGIN
-    NB_CLIENT := Compter_Client('Tunis');
+    NB_CLIENT := Compter_Client(UPPER('Tunis'));
     DBMS_OUTPUT.PUT_LINE(NB_CLIENT);
     EXCEPTION 
         WHEN NO_DATA_FOUND THEN
