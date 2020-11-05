@@ -10,9 +10,9 @@ TO_CHAR (x [,y])	Converts Numeric and Date values to a character string value.
                   It cannot be used for calculations since it is a string value.
                   
 TO_DATE (x [, date_format])	Converts a valid Numeric and Character values to a Date value. 
-                            Date is formatted to the format specified by 'date_format'.
+  Date is formatted to the format specified by 'date_format'.
                             
 NVL (x, y)	If 'x' is NULL, replace it with 'y'. 'x' and 'y' must be of the same datatype.
 
 DECODE (a, b, c, d, e, default_value)	Checks the value of 'a', if a = b, 
-                                      then returns 'c'. If a = d, then returns 'e'. Else, returns default_value.
+  then returns 'c'. If a = d, then returns 'e'. Else, returns default_value.
