@@ -1,4 +1,3 @@
-
 SET VERIFY OFF
 SET SERVEROUTPUT ON
 -- Question 1 :
