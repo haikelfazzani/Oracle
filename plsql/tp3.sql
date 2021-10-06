@@ -70,6 +70,7 @@ BEGIN
 END;
 /
 
+
 -- Question 6 :
 CREATE OR REPLACE PROCEDURE Calcule_Montant (
     prix_unitaire ARTICLE.PRIXUNITAIRE%TYPE, 
