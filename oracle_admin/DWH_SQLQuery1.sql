@@ -3,6 +3,7 @@ Go
 Use MedicalDWH
 Go
 
+
 Use MedicalDWH
 Create table Maladie
 (IdMaladie int primary key identity, TypeMaladie varchar(100), NomMaladie varchar(100))
@@ -45,4 +46,4 @@ ALTER TABLE Mesuree ADD CONSTRAINT IdDate FOREIGN KEY (IdDate) REFERENCES Temps(
 AlTER TABLE Mesuree ADD CONSTRAINT IdRegion FOREIGN KEY (IdRegion) REFERENCES Region(IdRegion) ;
 AlTER TABLE Mesuree ADD CONSTRAINT IdPatient FOREIGN KEY (IdPatient) REFERENCES Patient(IdPatient) ;
 AlTER TABLE Mesuree ADD CONSTRAINT IdDirection FOREIGN KEY (IdDirection) REFERENCES Direction(IdDirection) ;
-Go
+Go
